@@ -4,7 +4,8 @@ public class Char
 {
     //char -целочисленное значение из оф документации.
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         char ch1 = 88;
         ch1 += 1;
         char ch2 = 'Y';
