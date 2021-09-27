@@ -4,7 +4,7 @@ public class Pifagor
 {
     static void  hypotenuza(double a, double b)
     {
-        double c = Math.sqrt((a*a) + (b*b));
+        double c = Math.sqrt((a*a) + (b*b)); //Math.pow(a, 2)
 
         System.out.println(c);
     }
