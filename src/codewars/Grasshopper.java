@@ -4,7 +4,7 @@ package codewars;
 
 public class Grasshopper {
 
-    static int summation(int x)
+    public static int summation(int x)
     {
         //base case
         if (x == 0) return 0;
