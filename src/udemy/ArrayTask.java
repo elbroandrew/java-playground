@@ -7,23 +7,18 @@ public class ArrayTask
     */
 
 
-
-
     public static void main(String[] args) {
-        int[] johan = new int[901];
-
-        for(int i = 0; i <= 900; i += 1)
-        {
-            johan[i] = i + 100;
-        }
-        System.out.println(johan[0] + "\n" + johan[900]);
-
+        int[] johan = new int[100];
         int[] pohan = new int[johan.length];
-        for(int j = 0; j <= johan.length - 1; j += 1)
+
+        for(int i = 0, j = johan.length - 1; i < johan.length; i++, j--)
         {
-            pohan[j] = johan[johan.length - j - 1];
+            johan[i] = i * 10;
+            pohan[i] = j * 10;
         }
+
+        System.out.println(johan[0] + "\n" + johan[99]);
         System.out.println(pohan[0]);
-        System.out.println(pohan[900]);
+        System.out.println(pohan[99]);
     }
 }
