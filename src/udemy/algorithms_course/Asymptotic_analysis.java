@@ -2,7 +2,7 @@ package udemy.algorithms_course;
 
 public class Asymptotic_analysis
 {
-    static int f1(int[] a, int x) //O(n)
+    static int search(int[] a, int x) //O(n)
     {
         for(int i = 0; i < a.length; ++i)
         {
