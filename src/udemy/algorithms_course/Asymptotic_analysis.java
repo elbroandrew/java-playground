@@ -14,6 +14,13 @@ public class Asymptotic_analysis
         return -1;
     }
 
+    static void swap(int a, int b) //O(1) -- всегда три действия делает алгоритм.
+    {
+        int t = a;
+        a = b;
+        b = t;
+    }
+
 
     public static void main(String[] args)
     {
