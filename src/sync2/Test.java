@@ -12,27 +12,33 @@ public class Test {
 
 class Worker {
     Random random = new Random();
+
+    Object lock1 = new Object();
+    Object lock2 = new Object();
+
     private List<Integer> list1 = new ArrayList<>();
     private List<Integer> list2 = new ArrayList<>();
 
-    public void addToList1() {
-        try {
-            Thread.sleep(1);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+    public  void addToList1() {
+        synchronized(lock1) {
+            try {
+                Thread.sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            list1.add(random.nextInt(100));
         }
-        list1.add(random.nextInt(100));
-
     }
 
     public void addToList2() {
-        try {
-            Thread.sleep(1);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        synchronized(lock2) {
+            try {
+                Thread.sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            list2.add(random.nextInt(100));
         }
-        list2.add(random.nextInt(100));
-
     }
 
     public void work(){
@@ -42,9 +48,29 @@ class Worker {
         }
     }
 
-    public void main() {
+    public void main() throws InterruptedException {
+
+
+
         long before = System.currentTimeMillis();
-        work();
+        Thread t1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                work();
+            }
+        });
+        Thread t2 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                work();
+            }
+        });
+        t1.start();
+        t2.start();
+
+        t1.join();
+        t2.join();
+
         long after = System.currentTimeMillis();
         System.out.println("Program took " + (after - before) + " ms to run."); //397 ms
         System.out.println("List1: " + list1.size());
