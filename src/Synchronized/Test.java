@@ -9,7 +9,7 @@ public class Test {
     }
 
     public void increment(){
-        synchronized (){
+        synchronized (this){
             counter++;
         }
     }
