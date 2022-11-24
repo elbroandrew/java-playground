@@ -8,8 +8,10 @@ public class Test {
         test.doWork();
     }
 
-    public synchronized void increment(){
-        counter++;
+    public void increment(){
+        synchronized (){
+            counter++;
+        }
     }
 
     public void doWork() throws InterruptedException {
