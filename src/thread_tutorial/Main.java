@@ -15,7 +15,7 @@ public class Main {
 }
 
 class MyThread extends Thread{
-    private boolean running = true;
+    private volatile boolean running = true; //cache coherence
     @Override
     public void run() {
         while (running){
