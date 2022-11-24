@@ -3,12 +3,12 @@ package Synchronized;
 public class Test {
     private int counter;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Test test = new Test();
         test.doWork();
     }
 
-    public void doWork(){
+    public void doWork() throws InterruptedException {
         Thread t1 = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -29,6 +29,8 @@ public class Test {
 
         t1.start();
         t2.start();
+        t1.join();
+        t2.join();
 
         System.out.println(counter);
     }
