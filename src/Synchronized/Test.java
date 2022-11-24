@@ -8,12 +8,16 @@ public class Test {
         test.doWork();
     }
 
+    public synchronized void increment(){
+        counter++;
+    }
+
     public void doWork() throws InterruptedException {
         Thread t1 = new Thread(new Runnable() {
             @Override
             public void run() {
                 for (int i = 0; i < 10000; i++){
-                    counter++;
+                    increment();
                 }
             }
         });
@@ -22,7 +26,7 @@ public class Test {
             @Override
             public void run() {
                 for (int i = 0; i < 10000; i++){
-                    counter++;
+                    increment();
                 }
             }
         });
