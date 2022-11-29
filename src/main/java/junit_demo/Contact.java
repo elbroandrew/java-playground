@@ -1,4 +1,4 @@
-package junit_demo;
+package main.java.junit_demo;
 
 public class Contact {
     private String firstName;

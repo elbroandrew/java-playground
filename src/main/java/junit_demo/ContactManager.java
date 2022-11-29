@@ -1,4 +1,4 @@
-package junit_demo;
+package main.java.junit_demo;
 
 import java.util.Collection;
 import java.util.Map;
