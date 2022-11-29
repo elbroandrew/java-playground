@@ -1,5 +1,3 @@
-package main.java.junit_demo;
-
 public class Contact {
     private String firstName;
     private String lastName;
