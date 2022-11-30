@@ -18,19 +18,19 @@ public class Contact {
     }
 
     public String getLastName(){
-        return firstName;
+        return this.lastName;
     }
 
     public void setLastName(String ln){
-        this.firstName = ln;
+        this.lastName = ln;
     }
 
     public String getPhoneNumber(){
-        return firstName;
+        return this.phoneNumber;
     }
 
     public void setPhoneNumber(String fn){
-        this.firstName = fn;
+        this.phoneNumber = fn;
     }
 
     public void validateFirstName(){
