@@ -2,10 +2,7 @@ package colt_steele_data_structures.data_structures
 
 fun main() {
 
-    var n = Node(10)
-    var t = Node(12)
-    n.left = t
-    println(n.left)
+
 
 }
 
@@ -15,6 +12,16 @@ class Node(var value: Int){
 }
 
 class BST {
-    var root: Int? = null
+    private var root: Node? = null
+
+    fun insert(value: Int){
+        var n = Node(value)
+        if (root == null){
+            root = n
+            return
+        }
+        var currentNode = root
+    }
+
 }
 
