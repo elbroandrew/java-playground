@@ -1,18 +1,25 @@
 package bytes;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
 public class MainApp {
 
     public static void main(String[] args) {
-        String str = "Hello";
-        byte[] data = str.getBytes(StandardCharsets.UTF_8);
+        byte[] buffer = new byte[12];
 
-        for (int i = 0; i < data.length; i++) {
-            data[i]++;
+        try (
+                FileInputStream in = new FileInputStream("src/main/java/bytes/input.txt");
+                FileOutputStream out = new FileOutputStream("src/main/java/bytes/out.txt");
+        )  {
+            int n = in.read(buffer);
+            out.write(buffer, 0, n);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
 
-        String output = new String(data);
-        System.out.println(output);
     }
 }
