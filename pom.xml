@@ -48,6 +48,9 @@
                 <configuration>
                     <!--Use this only when using Java 9+-->
                     <release>15</release>
+                    <source>21</source>
+                    <target>21</target>
+                    <compilerArgs>--enable-preview</compilerArgs>
                     <!--
                     Uncomment this and comment out <release> when using Java 8
                     <source>1.8</source>
