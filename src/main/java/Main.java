@@ -1,42 +1,30 @@
-import java.io.*;
-import java.net.Socket;
-import java.net.UnknownHostException;
+import org.jetbrains.annotations.Nullable;
+
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 public class Main {
     public static void main(String[] args) {
-
-        f();
-
+        int[] array = new int[6];
+        Arrays.setAll(array, i -> (int) (Math.random() * 10));
+        System.out.println(Arrays.toString(array));
+        int[] ar = sumRecursive(array);
     }
 
-    static void f(){
-        String hostname = "www.google.com";
-        int port = 80;
-
-        try (Socket socket = new Socket(hostname, port)) {
-
-            OutputStream output = socket.getOutputStream();
-            PrintWriter writer = new PrintWriter(output, true);
-
-            writer.println("GET / HTTP/1.1");
-            writer.println("Host: " + hostname);
-            writer.println("User-Agent: Simple Http Client");
-            writer.println("Accept: text/html");
-            writer.println("Accept-Language: en-US");
-            writer.println("Connection: close");
-            writer.println();
-
-            writer.flush();
-            System.out.println("SENT MESSAGE: " + writer);
-
-
-        } catch (UnknownHostException ex) {
-
-            System.out.println("Server not found: " + ex.getMessage());
-
-        } catch (IOException ex) {
-
-            System.out.println("I/O error: " + ex.getMessage());
+    static int[] sumRecursive(int[] arr) {
+        HashMap<Integer, Integer> hm = new HashMap<Integer, Integer>(arr.length);
+        for (Integer i : arr) {
+            hm.put(i, hm.getOrDefault(i, 0) + 1);
         }
+        System.out.println(hm);
+        return arr;
     }
 }
+
+
