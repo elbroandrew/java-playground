@@ -2,7 +2,10 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
 public class BlockingQueueExample {
-
+    /*
+    Один поток пишет в очередь, второй не может считать и наоборот.
+    Обеспечивается порядок доступа к элементам.
+    * */
     private BlockingQueue<String> drop;
 
     private final String DONE = "DONE";
