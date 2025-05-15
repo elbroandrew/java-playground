@@ -17,15 +17,14 @@ public class MinSubarraySum {
             if(nums[right] >= target){
                 return 1;
             }
-            if (sum >= target) {
-                while (sum - nums[left] >= target) {
-                    left++;
-                    sum -= nums[left];
-                }
+            while (sum >= target) {
                     min = Math.min(min, right - left + 1);
+                    sum -= nums[left];
+                    left++;
 
             }
         }
+        System.gc();  // уменьшает потребление памяти !!
         return min == Integer.MAX_VALUE ? 0 : min;
     }
 }
