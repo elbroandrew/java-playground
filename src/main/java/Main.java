@@ -1,6 +1,6 @@
 
 
-public static void main(String[] args)  {
+public static void main()  {
 
     int[] nums = {1,2,3,4,5};
     int target = 11;
