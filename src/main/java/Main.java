@@ -2,10 +2,11 @@
 
 public static void main()  {
 
-    int[] nums = {1,2,3,4,5};
-    int target = 11;
-    var result =  MinSubarraySum.calc(target, nums);
-    System.out.println(result);
+
+    String s1 = "ABABABAB";
+    String s2 = "ABAB";
+    String v = GreatestCommonDivisor.solve(s1, s2);
+    System.out.println(v);
 
 }
 
