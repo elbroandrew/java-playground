@@ -2,10 +2,8 @@
 
 public static void main()  {
 
+    var v = KidsCandies.solveIt(new int[]{4,2,1,1,2}, 3);
 
-    String s1 = "ABABABAB";
-    String s2 = "ABAB";
-    String v = GreatestCommonDivisor.solve(s1, s2);
     System.out.println(v);
 
 }
