@@ -1,0 +1,13 @@
+Если надо создать объект, у которого много кастомизируемых полей.
+
+// проблема
+
+Car car = new Car("default maker", "default color", "default owner");
+car.displayInfo();
+
+Car redCar = new Car("default maker", "red color", "default owner");
+car.displayInfo();
+
+Car johnCar = new Car("default maker", "default color", "john");
+car.displayInfo();
+
