@@ -1,4 +1,6 @@
-package Pattern.Builder;
+package Pattern;
+
+import Pattern.Builder.Car;
 
 public class Main {
 

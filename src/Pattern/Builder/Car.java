@@ -16,7 +16,7 @@ public class Car {
         System.out.println(maker + " " + color + " " + owner);
     }
 
-    static class CarBuilder{
+    public static class CarBuilder{
 
         // Create default fields
         private String maker = "none";
