@@ -10,27 +10,27 @@ public class SelectionSort {
 
         int i = 0;
         int n = arr.length;
-        boolean swapped;
+//        boolean swapped;
         while (i < n - 1){
-            swapped = false;
+//            swapped = false;
             int minIndex = i;
             int j = i + 1;
             while (j < n){
                 if(arr[j] < arr[minIndex]){
                     minIndex = j;
-                    swapped = true;
+//                    swapped = true;
                 }
                 j++;
             }
             //Swap
-            if (swapped){
+//            if (swapped){
                 int temp = arr[i];
                 arr[i] = arr[minIndex];
                 arr[minIndex] = temp;
-            }else{
-                System.out.println("массив уже отсортирован.");
-                break;
-            }
+//            }else{
+//                System.out.println("массив уже отсортирован.");
+//                break;
+//            }
 
             i++;
         }
