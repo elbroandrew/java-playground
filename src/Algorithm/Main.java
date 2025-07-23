@@ -1,11 +1,7 @@
 package Algorithm;
 
 
-import Algorithm.Exercises.PhonebookSearch.ArrayList;
-import Algorithm.Search.BinarySearch.BinarySearch;
-import Algorithm.Sort.InsertionSort;
-import Algorithm.Sort.SelectionSort;
-import Algorithm.Utils.Stopwatch;
+import Algorithm.Exercises.SortedContactBook.SortedContactBook;
 
 public class Main {
 
@@ -23,16 +19,13 @@ public class Main {
 //        int[] sortedArray = InsertionSort.Do(arr);
 //        var result = BinarySearch.Do(sortedArray, 234);
 //        System.out.println(result);
-        ArrayList a = new ArrayList();
-        a.add("a");
-        a.add("b");
-        a.add("c");
-        a.add("d");
-        a.add("d");
-        a.add("d");
-        a.add("d");
-        for(int i = 0; i < a.len();i++){
-            System.out.println(a.get(i));
+
+        SortedContactBook contacts = new SortedContactBook();
+        contacts.addContact("andrew");
+        System.out.println(contacts.getContact("andrew"));
+        String[] a = contacts.getAll();
+        for (int i = 0; i < a.length; i++) {
+            System.out.println(a[i]);
         }
 
 
