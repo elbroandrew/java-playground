@@ -1,6 +1,6 @@
 package Pattern;
 
-import Pattern.Builder.Car;
+import Pattern.Creational.Builder.Car;
 
 public class Main {
 

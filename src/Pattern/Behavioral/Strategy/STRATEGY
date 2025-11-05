@@ -1,0 +1,48 @@
+Проблема:
+
+наследование подкласса от суперкласс - надо создать объект, но методы родителя не нужны
+или необходимо переписать.
+Пример:
+class Duck
+method Quack
+method Fly
+method Display
+
+class RubberDuck extends Duck
+method Fly - нам не нужен
+method Quack - не нужен
+
+Решение:
+Вариант 1. Решить с интерфейсом.
+Проблема: в итоге с интерфейсом всё равно придётся много раз писать один и тот же метод.
+Пример:
+class Duck
+interface Quackable{
+method quack();
+}
+interface Flyable{
+method fly();
+}
+
+class MallardDuck extends Duck implements Quackable,Flyable
+method quack(){
+print "quack"
+}
+method fly(){
+print "can fly"
+}
+
+class AnotherDuck extends Duck implements Quackable,Flyable
+method quack(){
+print "HELLO"
+}
+method fly(){
+print "can fly high"
+}
+
+каждый раз метод переписывать надо.
+
+Решение:
+"То, что изменяется - надо инкапсулировать в классы".
+"Composition over inheritance".
+Решение в файле.
