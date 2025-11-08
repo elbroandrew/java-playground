@@ -1,4 +1,4 @@
-package Pattern.Behavioral.Observer.Example01;
+package Pattern.Behavioral.Observer.PUSH;
 
 public class MobileApp implements Observer{
 

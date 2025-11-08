@@ -1,7 +1,6 @@
-package Pattern.Behavioral.Observer.Example01;
+package Pattern.Behavioral.Observer.PUSH;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class NewsAgency implements Subject{
     private ArrayList<Observer> observers;
